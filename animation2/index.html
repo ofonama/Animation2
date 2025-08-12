@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html body hr {
+            width: 500;
+            font-weight: 200;
+            z-index: -1;
+            background-color: #2c57819a;
+            animation: roll 3s;
+            unicode-bidi: isolate;
+        }
+        @keyframes roll {
+            50% {
+                transform: rotate(0.5turn);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS animations and Transitions.</h1>
+        <h3>Hover on them to see their animations.</h3>
+        <hr>
+        <aside>
+            <p>
+                Created by <br>
+                Usen <br />
+                Tega <br />
+                Ofonama, <br>
+                a <span>Pro</span>grammer
+            </p>
+        </aside>
+        <div class="box one"></div>
+        <div class="box two"></div>
+        <div class="box three"></div>
+        <div class="box four"></div>
+        <div class="box five"></div>
+        <div class="box six"></div>
+        <div class="box seven"></div>
+        <div class="box eight"></div>
+        <div class="box nine"></div>
+        <div class="box ten"></div>
+    </div>
+
+    <script>
+        // Get all the boxes
+        const boxes = document.querySelectorAll('.box');
+
+        // Add event listener to each box
+        boxes.forEach((box, index) => {
+            box.addEventListener('mouseover', () => {
+                box.classList.add('animate');
+                // Remove the class after the animation finishes
+                setTimeout(() => {
+                    box.classList.remove('animate');
+                }, 5000); // 5000ms = 5s
+            });
+        });
+    </script>
+</body>
+</html>
